@@ -1,0 +1,5 @@
+packages:
+  simdjson.cabal
+
+package simdjson
+  ghc-options: -Werror

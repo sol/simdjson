@@ -1,0 +1,19 @@
+spec-version: 0.36.0
+name: simdjson
+
+copyright: (c) 2023 Simon Hengel
+author: Simon Hengel <sol@typeful.net>
+
+ghc-options: -Wall
+
+extra-source-files: simdjson/singleheader/simdjson.h
+
+library:
+  dependencies:
+    - base
+    - system-cxx-std-lib
+  source-dirs: src
+  include-dirs: simdjson/singleheader
+  cxx-sources:
+    - simdjson/singleheader/simdjson.cpp
+    - cbits/validate-utf8.cpp

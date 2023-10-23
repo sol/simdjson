@@ -1,0 +1,32 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           simdjson
+version:        0.0.0
+author:         Simon Hengel <sol@typeful.net>
+maintainer:     Simon Hengel <sol@typeful.net>
+copyright:      (c) 2023 Simon Hengel
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    simdjson/singleheader/simdjson.h
+
+library
+  exposed-modules:
+      SimdJson
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  include-dirs:
+      simdjson/singleheader
+  cxx-sources:
+      simdjson/singleheader/simdjson.cpp
+      cbits/validate-utf8.cpp
+  build-depends:
+      base
+    , system-cxx-std-lib
+  default-language: Haskell2010
